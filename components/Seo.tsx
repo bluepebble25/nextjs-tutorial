@@ -10,7 +10,7 @@ function Seo() {
   const title: TitleMap = { '/': 'Home', '/about': 'About' };
   return (
     <Head>
-      <title>{title[router.pathname]} | Next Movies </title>
+      <title>{`${title[router.pathname]} | Next Movies `}</title>
     </Head>
   );
 }
