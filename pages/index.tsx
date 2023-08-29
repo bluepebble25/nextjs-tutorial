@@ -4,7 +4,8 @@ function Home({ results }: any) {
   const router = useRouter();
 
   const handleClick = (id: number, title: string) => {
-    router.push({ pathname: `movies/${title}/${id}` });
+    const encodedTitle = title.replace(/ /g, '+');
+    router.push({ pathname: `movies/${encodedTitle}/${id}` });
   };
 
   return (

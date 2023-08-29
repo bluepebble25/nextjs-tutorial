@@ -1,6 +1,9 @@
+import { decodeTitle } from '@/lib/utils';
+
 function MovieDetail({ params }: any) {
   const [title, id] = params;
-  return <h4>{title}</h4>;
+  const decodedTitle = decodeTitle(title);
+  return <h4>{decodedTitle}</h4>;
 }
 
 export function getServerSideProps({ params: { params } }: any) {
