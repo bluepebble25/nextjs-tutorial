@@ -1,3 +1,4 @@
+const BASE_URL = 'https://api.themoviedb.org/3';
 const MOVIE_API_KEY = process.env.MOVIE_API_KEY;
 
 const nextConfig = {
@@ -6,7 +7,11 @@ const nextConfig = {
     return [
       {
         source: '/api/movies',
-        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${MOVIE_API_KEY}`,
+        destination: `${BASE_URL}/movie/popular?api_key=${MOVIE_API_KEY}`,
+      },
+      {
+        source: '/api/movies/:id',
+        destination: `${BASE_URL}/movie/:id?api_key=${MOVIE_API_KEY}`,
       },
     ];
   },
